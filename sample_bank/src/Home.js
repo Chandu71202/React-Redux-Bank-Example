@@ -16,10 +16,6 @@ let navigate = useNavigate();
         <div className="Home">
             <header className="Home-header">
                 <h1>NatWest Banking App</h1>
-                <div className="button-container">
-                
-                
-                </div>
                 <div className="card-container">
                     <div className="card" style={{marginRight: 100}}>
                         <img src="https://media.istockphoto.com/id/1463013729/photo/online-registration-form-for-modish-form-filling.webp?b=1&s=170667a&w=0&k=20&c=iUOC7YLenExVDT9pfUtJyyIS-dlJvOPyJq1USG4lv5I=" alt="Register" />

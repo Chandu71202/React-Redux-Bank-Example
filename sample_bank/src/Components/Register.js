@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
-import './Register.css';
+import { React, useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  registerUser,
+  selectUser,
+  syncWithLocalStorage,
+} from "../features/register/registerSlice";
+import "./Register.css";
 
 export default function Register() {
+  const dispatch = useDispatch();
+  let userArray = useSelector(selectUser);
+
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
@@ -24,10 +33,17 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-  
-
+    console.log(user);
+    dispatch(registerUser(user));
   }
+
+  useEffect(() => {
+    console.log(userArray);
+    if (localStorage.getItem("users")) {
+      dispatch(syncWithLocalStorage(JSON.parse(localStorage.getItem("users"))));
+    }
+  }, []);
+  
 
   return (
     <div>
