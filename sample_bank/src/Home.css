@@ -1,11 +1,16 @@
-.Home {
+ .Home {
     text-align: center;
   }
   
   .Home-header {
     background-color: #282c34;
-    padding: 20px;
+    padding: 10px;
     color: white;
+  }
+
+  h1{
+    font-size: 50px;
+    margin-bottom: 50px;
   }
   
   .button-container {
@@ -13,9 +18,9 @@
   }
   
   .button {
-    margin: 10px;
+    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size:40px;
     cursor: pointer;
     border: none;
     border-radius: 4px;
@@ -25,7 +30,37 @@
   }
   
   .button:hover {
-    background-color: #4fa3d1; /* Darker Blue on hover */
+    background-color: #2921ff79; /* Darker Blue on hover */
+  }
+  .card-container{
+    display: flex;
+  }
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgb(54, 52, 52);
+    transition: 0.3s;
+    width: 45%;
+    padding: 20px;
+    background-color: #42454f;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  .p{
+    font-size: 25px;
+  }
+
+  img{
+    width: 100%;
+    border-radius: 4px;
   }
   
   
