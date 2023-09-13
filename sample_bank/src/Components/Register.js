@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Register() {
   return (
-    <div>service</div>
+    <div>register</div>
   )
 }
