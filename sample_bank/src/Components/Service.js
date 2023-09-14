@@ -1,37 +1,27 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './Service.css'; 
 
 const Service = () => {
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="card p-4">
-            <h2 className="text-center mb-4">Financial Services</h2>
-            <div className="row">
-              <div className="col-md-6 mb-4">
-                <button className="btn btn-primary btn-lg btn-block">Banking</button>
-              </div>
-              <div className="col-md-6 mb-4">
-                <button className="btn btn-primary btn-lg btn-block">Investments</button>
-              </div>
-              <div className="col-md-6 mb-4">
-                <button className="btn btn-primary btn-lg btn-block">Loans</button>
-              </div>
-              <div className="col-md-6 mb-4">
-                <button className="btn btn-primary btn-lg btn-block">Fintech</button>
-              </div>
-              <div className="col-md-6 mb-4">
-                <button className="btn btn-primary btn-lg btn-block">Insurance</button>
-              </div>
-              <div className="col-md-6 mb-4">
-                <button className="btn btn-primary btn-lg btn-block">Exchanges</button>
-              </div>
-            </div>
+    
+    <div className="service-container ">
+      <div className="service-box">
+        <h1 className='h1-service-box'>Services</h1>
+        <div className="button-container">
+          <div className="button-group">
+            <button className="button1">Exchanges </button>
+            <button className="button1">Fintech </button>
+            <button className="button1"> Banking</button>
+          </div>
+          <div className="button-group">
+            <button className="button1"> Investments </button>
+            <button className="button1">Loans</button>
+            <button className="button1">Insurance  </button>
           </div>
         </div>
       </div>
     </div>
+    
   );
 };
 
