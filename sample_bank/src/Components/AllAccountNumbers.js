@@ -16,7 +16,7 @@ export default function AllAccountNumbers() {
   }, []);
   return (
     <div>
-      <h2>Available Account Numbers</h2>
+      <h1>Available Account Numbers</h1>
       {userArray.map((eachuser) => {
         return (
           <h1 key={userArray.indexOf(eachuser)}>{eachuser?.accountNumber}</h1>

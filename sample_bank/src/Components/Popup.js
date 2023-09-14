@@ -1,17 +1,44 @@
 // src/AccountNumberDialog.js
-import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
+import { React, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectUser,
+  syncWithLocalStorage,
+} from "../features/register/registerSlice";
+import { useNavigate } from "react-router-dom";
 
 function Popup({ show, handleClose, handleSave }) {
-  const [accountNumber, setAccountNumber] = useState('');
+  let userArray = useSelector(selectUser);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log(userArray);
+    if (localStorage.getItem("users")) {
+      dispatch(syncWithLocalStorage(JSON.parse(localStorage.getItem("users"))));
+    }
+  }, []);
 
+  const [accountNumber, setAccountNumber] = useState("");
+  let navigate = useNavigate();
   const handleInputChange = (e) => {
     setAccountNumber(e.target.value);
   };
 
+  let account_no = [];
+  userArray.map((eachuser) => {
+    account_no.push(eachuser.accountNumber);
+  });
+
   const handleSaveClick = () => {
-    handleSave(accountNumber);
-    handleClose();
+    if (account_no.includes(accountNumber)) {
+      alert("Navigating to service page");
+      navigate("/service");
+    } else {
+      alert("User is not registered yet!");
+      navigate("/");
+      handleClose();
+    }
   };
 
   return (
@@ -32,8 +59,12 @@ function Popup({ show, handleClose, handleSave }) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>Close</Button>
-        <Button variant="primary" onClick={handleSaveClick}>Submit</Button>
+        <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={handleSaveClick}>
+          Submit
+        </Button>
       </Modal.Footer>
     </Modal>
   );
