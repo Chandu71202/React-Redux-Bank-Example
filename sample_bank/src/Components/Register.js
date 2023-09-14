@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   registerUser,
@@ -12,13 +12,13 @@ export default function Register() {
   let userArray = useSelector(selectUser);
 
   const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    accountType: 'savings',
-    initialDeposit: '',
-    accountNumber: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    accountType: "savings",
+    initialDeposit: "",
+    accountNumber: "",
   });
 
   const handleChange = (e) => {
@@ -34,16 +34,16 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
+    alert("User Registered Successfully");
     dispatch(registerUser(user));
-  }
+  };
 
   useEffect(() => {
     console.log(userArray);
     if (localStorage.getItem("users")) {
       dispatch(syncWithLocalStorage(JSON.parse(localStorage.getItem("users"))));
     }
-  }, []);
-  
+  }, [dispatch, userArray]);
 
   return (
     <div>
@@ -101,7 +101,7 @@ export default function Register() {
           </select>
         </div>
         <div>
-          <label>Initial Deposit ($):</label>
+          <label>Initial Deposit (Rs.):</label>
           <input
             type="number"
             name="initialDeposit"
@@ -118,7 +118,7 @@ export default function Register() {
             value={user.accountNumber}
             readOnly
           />
-          <button type="button" onClick={generateAccountNumber}>
+          <button type="button" onClick={generateAccountNumber} className="generate-button">
             Generate Account Number
           </button>
         </div>
