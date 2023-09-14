@@ -8,6 +8,7 @@ import {
   syncWithLocalStorage,
 } from "../features/register/registerSlice";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Popup({ show, handleClose, handleSave }) {
   let userArray = useSelector(selectUser);
@@ -34,6 +35,15 @@ function Popup({ show, handleClose, handleSave }) {
     if (account_no.includes(accountNumber)) {
       alert("Navigating to service page");
       navigate("/service");
+      axios.get("http://localhost:3500/users").then((response) => {
+        const users = response.data;
+        const matchingUser = users.find(
+          (user) => user.accountNumber === accountNumber
+        );
+        if (matchingUser) {
+          sessionStorage.setItem("username", matchingUser.firstName);
+        }
+      });
     } else {
       alert("User is not registered yet!");
       navigate("/");
