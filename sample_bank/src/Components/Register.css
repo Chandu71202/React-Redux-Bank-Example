@@ -85,6 +85,11 @@ button[type="submit"] {
   transition: background-color 0.3s;
 }
 
+/* Blue button hover effect */
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover (retain hover effect) */
+}
+
 /* Green button style for "Generate Account Number" */
 button.generate-button {
   padding: 12px 20px;
