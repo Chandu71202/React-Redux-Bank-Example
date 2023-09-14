@@ -7,19 +7,20 @@ import {
 } from "../features/register/registerSlice";
 import "./Register.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const dispatch = useDispatch();
   let userArray = useSelector(selectUser);
-
+  let navigate = useNavigate();
   const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    accountType: 'savings',
-    initialDeposit: '',
-    accountNumber: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    accountType: "savings",
+    initialDeposit: "",
+    accountNumber: "",
   });
 
   const handleChange = (e) => {
@@ -28,7 +29,9 @@ export default function Register() {
   };
 
   const generateAccountNumber = () => {
-    const accountNumber = Math.floor(1000000000 + Math.random() * 9000000000).toString();
+    const accountNumber = Math.floor(
+      1000000000 + Math.random() * 9000000000
+    ).toString();
     setUser({ ...user, accountNumber });
   };
 
@@ -36,9 +39,10 @@ export default function Register() {
     e.preventDefault();
     console.log(user);
     dispatch(registerUser(user));
-    axios.post('http://localhost:3500/users', user)
+    axios.post("http://localhost:3500/users", user);
     alert("User Registered Successfully");
-  }
+    navigate('/');
+  };
 
   useEffect(() => {
     console.log(userArray);
@@ -46,7 +50,6 @@ export default function Register() {
       dispatch(syncWithLocalStorage(JSON.parse(localStorage.getItem("users"))));
     }
   }, []);
-  
 
   return (
     <div>
@@ -121,7 +124,11 @@ export default function Register() {
             value={user.accountNumber}
             disabled
           />
-          <button type="button" onClick={generateAccountNumber} className="generate-button">
+          <button
+            type="button"
+            onClick={generateAccountNumber}
+            className="generate-button"
+          >
             Generate Account Number
           </button>
         </div>

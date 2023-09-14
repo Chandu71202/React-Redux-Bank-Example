@@ -1,23 +1,23 @@
 {
   "users": [
     {
-      "firstName": "dff",
-      "lastName": "sdfsd",
-      "email": "sdfsfs@gmail.com",
-      "phoneNumber": "84758",
+      "firstName": "eswar",
+      "lastName": "chand",
+      "email": "chandu@gmail.com",
+      "phoneNumber": "64886468",
       "accountType": "savings",
-      "initialDeposit": "85545",
-      "accountNumber": "7018572443",
+      "initialDeposit": "10000",
+      "accountNumber": "4680566249",
       "id": 1
     },
     {
-      "firstName": "fsdfdsf",
-      "lastName": "sdfsdf",
-      "email": "sfsdf@gmail.com",
-      "phoneNumber": "sdfsd",
-      "accountType": "savings",
-      "initialDeposit": "5881",
-      "accountNumber": "6957653421",
+      "firstName": "aman",
+      "lastName": "chaudary",
+      "email": "aman@gmail.com",
+      "phoneNumber": "95572987",
+      "accountType": "current",
+      "initialDeposit": "66546",
+      "accountNumber": "3670364416",
       "id": 2
     }
   ]

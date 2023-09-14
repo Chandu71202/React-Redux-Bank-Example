@@ -12,68 +12,62 @@
     border-bottom: 0px;
   }
 
-  .header{
-    font-size: 50px;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
+.header {
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
 
-  .button {
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    font-size:30px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background-color: #61dafb; /* Light Blue */
-    color: white;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #2921ff79; /* Darker Blue on hover */
-  }
-  .card-container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    gap: 50px;
-  }
-  .card1 {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgb(54, 52, 52);
-    transition: 0.3s;
-    width: 45%;
-    padding: 20px;
-    background-color: #42454f;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card1:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container1 {
-    padding: 2px 16px;
-    justify-content: center;
-    align-items: center;
-  }
+.button {
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #61dafb; /* Light Blue */
+  color: white;
+  transition: background-color 0.3s;
+}
 
-  .p{
-    font-size: 25px;
-  }
+.button:hover {
+  background-color: #2921ff79; /* Darker Blue on hover */
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 50px;
+}
+.card1 {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgb(54, 52, 52);
+  transition: 0.3s;
+  width: 45%;
+  padding: 20px;
+  background-color: #42454f;
+}
 
-  img{
-    width: 100%;
-    border-radius: 4px;
-  }
-  
-  
-  
-  
-  
-  
+/* On mouse-over, add a deeper shadow */
+.card1:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container1 {
+  padding: 2px 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.p {
+  font-size: 25px;
+}
+
+img {
+  width: 100%;
+  border-radius: 4px;
+}
