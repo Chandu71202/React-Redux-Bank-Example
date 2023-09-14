@@ -1,4 +1,4 @@
- .Home {
+  .Home {
     text-align: center;
   }
   
@@ -13,14 +13,12 @@
     margin-top: 20px;
     margin-bottom: 50px;
   }
-  
-  .button-container {
-    margin-top: 20px;
-  }
-  
+
   .button {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
     padding: 10px 20px;
     font-size:30px;
     cursor: pointer;
@@ -36,6 +34,9 @@
   }
   .card-container{
     display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
   }
   .card1 {
     /* Add shadows to create the "card" effect */
@@ -54,6 +55,8 @@
   /* Add some padding inside the card container */
   .container1 {
     padding: 2px 16px;
+    justify-content: center;
+    align-items: center;
   }
 
   .p{
