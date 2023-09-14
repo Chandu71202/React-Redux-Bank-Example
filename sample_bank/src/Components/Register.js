@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   registerUser,
@@ -6,19 +6,20 @@ import {
   syncWithLocalStorage,
 } from "../features/register/registerSlice";
 import "./Register.css";
+import axios from "axios";
 
 export default function Register() {
   const dispatch = useDispatch();
   let userArray = useSelector(selectUser);
 
   const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    accountType: "savings",
-    initialDeposit: "",
-    accountNumber: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    accountType: 'savings',
+    initialDeposit: '',
+    accountNumber: '',
   });
 
   const handleChange = (e) => {
@@ -34,16 +35,18 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
-    alert("User Registered Successfully");
     dispatch(registerUser(user));
-  };
+    axios.post('http://localhost:3500/users', user)
+    alert("User Registered Successfully");
+  }
 
   useEffect(() => {
     console.log(userArray);
     if (localStorage.getItem("users")) {
       dispatch(syncWithLocalStorage(JSON.parse(localStorage.getItem("users"))));
     }
-  }, [dispatch, userArray]);
+  }, []);
+  
 
   return (
     <div>
@@ -101,7 +104,7 @@ export default function Register() {
           </select>
         </div>
         <div>
-          <label>Initial Deposit (Rs.):</label>
+          <label>Initial Deposit ($):</label>
           <input
             type="number"
             name="initialDeposit"
@@ -116,7 +119,7 @@ export default function Register() {
             type="text"
             name="accountNumber"
             value={user.accountNumber}
-            readOnly
+            disabled
           />
           <button type="button" onClick={generateAccountNumber} className="generate-button">
             Generate Account Number

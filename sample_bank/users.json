@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "firstName": "dff",
+      "lastName": "sdfsd",
+      "email": "sdfsfs@gmail.com",
+      "phoneNumber": "84758",
+      "accountType": "savings",
+      "initialDeposit": "85545",
+      "accountNumber": "7018572443",
+      "id": 1
+    },
+    {
+      "firstName": "fsdfdsf",
+      "lastName": "sdfsdf",
+      "email": "sfsdf@gmail.com",
+      "phoneNumber": "sdfsd",
+      "accountType": "savings",
+      "initialDeposit": "5881",
+      "accountNumber": "6957653421",
+      "id": 2
+    }
+  ]
+}
