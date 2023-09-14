@@ -6,6 +6,10 @@
     background-color: #282c34;
     padding: 10px;
     color: white;
+    border-color: white;
+    border-style: solid;
+    border-width: 25px;
+    border-bottom: 0px;
   }
 
   .header{
