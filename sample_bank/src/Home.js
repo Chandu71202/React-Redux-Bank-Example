@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import {  useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Popup from './Components/Popup';
 
 const HomePage = () => {
 let navigate = useNavigate();
@@ -8,9 +10,18 @@ let navigate = useNavigate();
         navigate('/register');
     }
 
-    const service = ()=>{
-        navigate('/service');
-    }
+    const [showDialog, setShowDialog] = useState(false);
+    const [redirect, setRedirect] = useState(false);
+
+    const handleOpenDialog = () => {
+        setShowDialog(true);
+    };
+    const handleCloseDialog = () => {
+        setShowDialog(false);
+    };
+    const handleSaveAccountNumber = (number) => {
+        setRedirect(true);
+    };
 
     return (
         <div className="Home">
@@ -27,7 +38,13 @@ let navigate = useNavigate();
                     <div className="card">
                         <img src="https://img.freepik.com/free-vector/finance-services-financial-transaction-e-commerce-e-payment_335657-3134.jpg" alt="Services" />
                         <div className="container">
-                        <button className="button" onClick={()=>service()}>Service</button>
+                        <button className="button" onClick={handleOpenDialog}>Service</button>
+                        <Popup
+                            show={showDialog}
+                            handleClose={handleCloseDialog}
+                            handleSave={handleSaveAccountNumber}
+                        />
+                        {redirect && navigate('/service')}
                         <p className='p'>After successful registration, click on the Service button to access the provided services.</p>
                         </div>
                     </div>
