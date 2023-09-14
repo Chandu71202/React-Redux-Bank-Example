@@ -8,8 +8,9 @@
     color: white;
   }
 
-  h1{
+  .header{
     font-size: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
   }
   
@@ -19,8 +20,9 @@
   
   .button {
     margin-top: 20px;
+    margin-bottom: 10px;
     padding: 10px 20px;
-    font-size:40px;
+    font-size:30px;
     cursor: pointer;
     border: none;
     border-radius: 4px;
@@ -35,7 +37,7 @@
   .card-container{
     display: flex;
   }
-  .card {
+  .card1 {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgb(54, 52, 52);
     transition: 0.3s;
@@ -45,12 +47,12 @@
   }
   
   /* On mouse-over, add a deeper shadow */
-  .card:hover {
+  .card1:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
   /* Add some padding inside the card container */
-  .container {
+  .container1 {
     padding: 2px 16px;
   }
 
